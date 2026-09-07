@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crmperp — CRM</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div><p class="eyebrow">CRM WORKSPACE</p><h1>Crmperp</h1></div>
+    <button id="newContact" class="primary">+ New contact</button>
+  </header>
+  <main>
+    <section class="stats" aria-label="CRM summary">
+      <article><span>Total contacts</span><strong id="contactCount">0</strong></article>
+      <article><span>Open pipeline</span><strong id="pipelineValue">$0</strong></article>
+      <article><span>Won deals</span><strong id="wonCount">0</strong></article>
+    </section>
+    <section class="panel">
+      <div class="toolbar"><div><h2>Contacts</h2><p>Manage your relationships and sales opportunities.</p></div><input id="search" type="search" placeholder="Search contacts" aria-label="Search contacts" /></div>
+      <div class="table-wrap"><table><thead><tr><th>Name</th><th>Company</th><th>Email</th><th>Stage</th><th>Deal value</th><th></th></tr></thead><tbody id="contacts"></tbody></table></div>
+    </section>
+  </main>
+  <dialog id="contactDialog">
+    <form id="contactForm"><div class="modal-title"><h2>New contact</h2><button type="button" id="closeDialog" class="icon" aria-label="Close">×</button></div><label>Name<input required name="name" placeholder="Jordan Lee" /></label><label>Company<input name="company" placeholder="Acme Inc." /></label><label>Email<input required type="email" name="email" placeholder="jordan@example.com" /></label><label>Stage<select name="stage"><option>Lead</option><option>Qualified</option><option>Proposal</option><option>Won</option><option>Lost</option></select></label><label>Deal value<input name="value" type="number" min="0" step="100" value="0" /></label><div class="actions"><button type="button" id="cancel" class="secondary">Cancel</button><button class="primary">Save contact</button></div></form>
+  </dialog>
+  <template id="emptyState"><tr><td colspan="6" class="empty">No contacts yet. Add your first contact to begin.</td></tr></template>
+  <script src="app.js"></script>
+</body>
+</html>
